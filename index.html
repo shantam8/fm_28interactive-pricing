@@ -25,37 +25,36 @@
     </header>
     <main>
       <div class="card">
-        <div class="gridWrapper">
-          <p>Pageviews</p>
+        <div class="gridWrapperTop">
+          <p><span id="pageviewSpan"></span> Pageviews</p>
 
           <div class="slidecontainer">
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="50"
-              class="slider"
-              id="myRange"
-            />
+            <input type="range" min="1" max="5" value="3" id="mySlider" title="Pageview slider" aria-label="Pageview slider" />
           </div>
 
-          <p>
-            $
-            <span id="price"> </span>
-            /month
+          <p id="price">
+            <span>$</span>
+            <span id="priceSpan">15 </span>
+            <span id="pricingRate">/month</span>
           </p>
-          <p>Monthly Billing</p>
-          <button><span></span></button>
-          <p>Yearly Billing</p>
-          <p class="discount">25% discount</p>
         </div>
 
-        <div class="textBlock">
-          <p>Unlimited websites</p>
-          <p>100% data ownership</p>
-          <p>Email reports</p>
+        <div class="gridWrapperBottom">
+          <p class="hidden"></p>
+          <p class="billing">Monthly Billing</p>
+          <button id="btnToggle" title="switch to yearly billing rate" aria-label="switch to yearly billing rate"><span id="innerBtnCircle"></span></button>
+          <p class="billing">Yearly Billing</p>
+          <p class="discount">25%</p>
         </div>
-        <button>Start my trial</button>
+
+        <div class="cardBottomBlock">
+          <div class="textBlock">
+            <p>Unlimited websites</p>
+            <p>100% data ownership</p>
+            <p>Email reports</p>
+          </div>
+          <button id="btnStartTrial" aria-label="start the trial">Start my trial</button>
+        </div>
       </div>
     </main>
   </body>

@@ -1,15 +1,28 @@
 @import "colors";
 @import "fonts";
+@import "mixins";
 
 @import "1header";
 @import "2main";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-//     font-family: 'Manrope', sans-serif; 6 8
+h1,
+p,
+button,
+span {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+}
 
+h1 {
+  color: $darkDesaturatedBlue;
+}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+p {
+  color: $grayishBlue;
 }

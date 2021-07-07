@@ -1,8 +1,327 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+header {
+  position: relative;
+  padding: 5rem 2rem;
+  text-align: center;
+  background-image: url("../images/pattern-circles.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -10rem;
+  right: 0;
+  background-image: url("../images/bg-pattern.svg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+header h1 {
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+header p {
+  margin-top: 1rem;
+  padding: 0 3rem;
+}
+
+@media screen and (min-width: 40rem) {
+  header {
+    padding: 7rem 2rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+main {
+  margin: 2rem auto;
+  width: 312px;
+}
+
+main .card {
+  background-color: white;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px 0 lightgrey;
+          box-shadow: 0 0 10px 0 lightgrey;
+}
+
+main .card .gridWrapperTop {
+  padding: 1rem;
+  padding-top: 3rem;
+}
+
+main .card .gridWrapperTop p:nth-child(1) {
+  grid-area: pageviews;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+main .card .gridWrapperTop p:nth-child(1) span {
+  font-weight: 800;
+}
+
+main .card .gridWrapperTop .slidecontainer {
+  grid-area: slider;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+main .card .gridWrapperTop .slidecontainer #mySlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #a5f3eb), color-stop(50%, #eaeefb));
+  background: linear-gradient(90deg, #a5f3eb 50%, #eaeefb 50%);
+  border-radius: 5px;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+main .card .gridWrapperTop .slidecontainer #mySlider:hover, main .card .gridWrapperTop .slidecontainer #mySlider:focus {
+  opacity: 1;
+}
+
+main .card .gridWrapperTop .slidecontainer #mySlider::-webkit-slider-thumb {
+  width: 40px;
+  height: 40px;
+  background-color: #10d5c2;
+  background-image: url("../images/icon-slider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-box-shadow: 0 10px 30px 0 #10d5c2;
+          box-shadow: 0 10px 30px 0 #10d5c2;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+main .card .gridWrapperTop .slidecontainer #mySlider::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  background-color: #10d5c2;
+  background-image: url("../images/icon-slider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 30px 0 #10d5c2;
+  border: none;
+}
+
+main .card .gridWrapperTop #price {
+  grid-area: price;
+}
+
+main .card .gridWrapperTop #price span:not(:last-of-type) {
+  color: #293356;
+  font-size: 2rem;
+  font-weight: 800;
+  vertical-align: middle;
+}
+
+main .card .gridWrapperBottom {
+  margin: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4rem;
+}
+
+main .card .gridWrapperBottom .billing {
+  font-size: 0.7rem;
+}
+
+main .card .gridWrapperBottom #btnToggle {
+  margin-bottom: 0;
+  padding: 4px;
+  width: 50px;
+  height: 26px;
+  background-color: #cdd7ee;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+main .card .gridWrapperBottom #btnToggle:hover, main .card .gridWrapperBottom #btnToggle:focus {
+  cursor: pointer;
+  background-color: #a5f3eb;
+}
+
+main .card .gridWrapperBottom #btnToggle.active #innerBtnCircle {
+  left: 22px;
+}
+
+main .card .gridWrapperBottom #btnToggle #innerBtnCircle {
+  display: block;
+  position: relative;
+  width: 45%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+main .card .gridWrapperBottom .hidden {
+  width: 36px;
+  height: 24px;
+}
+
+main .card .gridWrapperBottom .discount {
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #feece7;
+  color: #ff8c66;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+main .card .cardBottomBlock {
+  padding: 1rem 0;
+  border-top: 1px solid lightgrey;
+}
+
+main .card .cardBottomBlock .textBlock p {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+main .card .cardBottomBlock .textBlock p::before {
+  padding-right: 10px;
+  content: url("../images/icon-check.svg");
+  alt: "";
+}
+
+main .card .cardBottomBlock #btnStartTrial {
+  margin: 2rem;
+  height: 40px;
+  width: 170px;
+  background-color: #293356;
+  color: #bdccff;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+main .card .cardBottomBlock #btnStartTrial:hover, main .card .cardBottomBlock #btnStartTrial:focus {
+  cursor: pointer;
+  color: white;
+}
+
+main .card .cardBottomBlock #btnStartTrial:active {
+  -webkit-transition: 0s;
+  transition: 0s;
+  background-color: red;
+}
+
+@media screen and (min-width: 40rem) {
+  main {
+    margin-top: 0;
+    width: 540px;
+  }
+  main .card .gridWrapperTop {
+    padding: 2rem;
+    padding-bottom: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "pageviews price" "slider slider";
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .card .gridWrapperTop p:nth-child(1) {
+    justify-self: baseline;
+  }
+  main .card .gridWrapperTop #price {
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  main .card .gridWrapperBottom {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  main .card .gridWrapperBottom .billing,
+  main .card .gridWrapperBottom .discount {
+    font-size: 0.8rem;
+  }
+  main .card .gridWrapperBottom .hidden {
+    width: 105px;
+  }
+  main .card .cardBottomBlock {
+    padding: 1rem 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .card .cardBottomBlock .textBlock {
+    text-align: left;
+  }
+  main .card .cardBottomBlock #btnStartTrial {
+    margin: 0;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+h1,
+p,
+button,
+span {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  color: #293356;
+}
+
+p {
+  color: #858fad;
 }
 /*# sourceMappingURL=main.css.map */

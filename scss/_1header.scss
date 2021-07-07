@@ -1,0 +1,40 @@
+header {
+  position: relative;
+  padding: 5rem 2rem;
+  text-align: center;
+  background-image: url("../images/pattern-circles.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -10rem;
+    right: 0;
+    background-image: url("../images/bg-pattern.svg");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 1.3rem;
+  }
+  p {
+    margin-top: 1rem;
+    padding: 0 3rem;
+  }
+
+  @media screen and (min-width: 40rem) {
+    padding: 7rem 2rem;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+}

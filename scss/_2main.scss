@@ -1,0 +1,227 @@
+main {
+  margin: 2rem auto;
+  width: 312px;
+
+  .card {
+    background-color: $white;
+    text-align: center;
+    box-shadow: 0 0 10px 0 lightgrey;
+
+    .gridWrapperTop {
+      padding: 1rem;
+      padding-top: 3rem;
+
+      p:nth-child(1) {
+        grid-area: pageviews;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+
+        span {
+          font-weight: 800;
+        }
+      }
+
+      .slidecontainer {
+        grid-area: slider;
+        margin: 2rem 0;
+        width: 100%;
+
+        #mySlider {
+          -webkit-appearance: none;
+          width: 100%;
+          height: 10px;
+          background: linear-gradient(
+            90deg,
+            $softCyan 50%,
+            $lightGrayishBlueEmpty 50%
+          );
+          border-radius: 5px;
+          opacity: 0.7;
+          transition: opacity 0.2s;
+
+          &:hover,
+          &:focus {
+            opacity: 1;
+          }
+
+          &::-webkit-slider-thumb  //Chrome
+          {
+            @include sliderThumb;
+            -webkit-appearance: none;
+            appearance: none;
+          }
+
+          &::-moz-range-thumb  //Firefox
+          {
+            @include sliderThumb;
+            border: none;
+          }
+        }
+      }
+
+      #price {
+        grid-area: price;
+      }
+
+      #price span:not(:last-of-type) {
+        color: $darkDesaturatedBlue;
+        font-size: 2rem;
+        font-weight: 800;
+        vertical-align: middle;
+      }
+    }
+
+    .gridWrapperBottom {
+      margin: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem;
+
+      .billing {
+        font-size: 0.7rem;
+      }
+
+      #btnToggle {
+        margin-bottom: 0;
+        padding: 4px;
+        width: 50px;
+        height: 26px;
+        background-color: $lightGrayishBlueToggle;
+        @include btnStyle;
+
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          background-color: $softCyan;
+        }
+
+        &.active {
+          #innerBtnCircle {
+            left: 22px;
+          }
+        }
+
+        #innerBtnCircle {
+          display: block;
+          position: relative;
+          width: 45%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          border-radius: 50%;
+          transition: all 0.2s linear;
+        }
+      }
+
+      .hidden {
+        width: 36px;
+        height: 24px;
+      }
+
+      .discount {
+        padding: 5px 10px;
+
+        border-radius: 15px;
+        background-color: $lightGrayishRed;
+        color: $lightRed;
+        font-size: 0.7rem;
+        font-weight: 800;
+      }
+    }
+
+    .cardBottomBlock {
+      padding: 1rem 0;
+      border-top: 1px solid lightgrey;
+
+      .textBlock {
+        p {
+          padding: 0.5rem;
+          font-size: 0.8rem;
+
+          &::before {
+            padding-right: 10px;
+            content: url("../images/icon-check.svg");
+            alt: "";
+          }
+        }
+      }
+      #btnStartTrial {
+        margin: 2rem;
+        height: 40px;
+        width: 170px;
+        background-color: $darkDesaturatedBlue;
+        color: $paleBlue;
+        @include btnStyle;
+
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          color: $white;
+        }
+
+        &:active {
+          transition: 0s;
+          background-color: red;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 40rem) {
+    margin-top: 0;
+    width: 540px;
+
+    .card {
+      .gridWrapperTop {
+        padding: 2rem;
+        padding-bottom: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "pageviews price" "slider slider";
+        align-items: center;
+
+        p:nth-child(1) {
+          justify-self: baseline;
+        }
+
+        #price {
+          justify-self: end;
+        }
+      }
+
+      .gridWrapperBottom {
+        margin-top: 1rem;
+        gap: 1rem;
+
+        .billing,
+        .discount {
+          font-size: 0.8rem;
+        }
+        .hidden {
+          width: 105px;
+        }
+      }
+
+      .cardBottomBlock {
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .textBlock {
+          text-align: left;
+        }
+        #btnStartTrial {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
