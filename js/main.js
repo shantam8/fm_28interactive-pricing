@@ -42,10 +42,7 @@ function sliderChange() {
 function togglePrice() {
   if (btnToggleBillingRate.classList.contains("active")) {
     btnToggleBillingRate.classList.remove("active");
-    btnToggleBillingRate.setAttribute(
-      "title",
-      "switch to yearly billing rate"
-    );
+    btnToggleBillingRate.setAttribute("title", "switch to yearly billing rate");
     btnToggleBillingRate.setAttribute(
       "aria-label",
       "switch to yearly billing rate"
@@ -54,7 +51,10 @@ function togglePrice() {
     textPricingRate.innerText = "/month";
   } else {
     btnToggleBillingRate.classList.add("active");
-    btnToggleBillingRate.setAttribute("title", "switch to monthly billing rate");
+    btnToggleBillingRate.setAttribute(
+      "title",
+      "switch to monthly billing rate"
+    );
     btnToggleBillingRate.setAttribute(
       "aria-label",
       "switch to monthly billing rate"
@@ -83,11 +83,11 @@ function setDiscountText() {
 }
 
 function setSliderAriaLabelAndValuetext() {
+  slider.setAttribute("aria-valuenow", slider.value - 1);
   slider.setAttribute(
-    "aria-valuenow",
+    "aria-valuetext",
     pageviewCategoryArray[slider.value - 1] + " pageviews"
-   );
-   slider.setAttribute("aria-valuetext", pageviewCategoryArray[slider.value - 1] + " pageviews" );
+  );
 }
 
 function init() {
