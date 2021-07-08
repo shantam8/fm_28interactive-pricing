@@ -83,7 +83,7 @@ function setDiscountText() {
 }
 
 function setSliderAriaLabelAndValuetext() {
-  slider.setAttribute("aria-valuenow", slider.value - 1);
+  slider.setAttribute("aria-valuenow", slider.value);
   slider.setAttribute(
     "aria-valuetext",
     pageviewCategoryArray[slider.value - 1] + " pageviews"
